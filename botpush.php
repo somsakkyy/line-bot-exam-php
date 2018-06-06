@@ -9,6 +9,7 @@ $access_token = 'fGQPBQRT9vIBi/ZnjM5fYiyAhAAM1mB4waFwnl4OEPM5rpLqnuCq0Kd6GyG10Yc
 $channelSecret = '0806b2fdb2e375097093f366a8c1b96d';
 
 $pushID = 'Uce14e6e52c654cb191ad53128a998ad8';
+
 if(isset($_REQUEST['mess'])){
 $_mymess = $_REQUEST['mess'];
 }else{$_mymess = "Hello"; }

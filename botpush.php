@@ -9,11 +9,13 @@ $access_token = 'fGQPBQRT9vIBi/ZnjM5fYiyAhAAM1mB4waFwnl4OEPM5rpLqnuCq0Kd6GyG10Yc
 $channelSecret = '0806b2fdb2e375097093f366a8c1b96d';
 
 $pushID = 'U8c70a677bf133bf1675136a943222105';
-
+if(isset($_REQUEST['mess'])){
+$_mymess = $_REQUEST['mess'];
+}else{$_mymess = "Hello"; }
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world');
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_mymess);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
